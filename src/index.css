@@ -1,3 +1,17 @@
+html {
+
+  --primary-color: #393e46;
+  --secondary-color: rgb(155, 158, 154);
+  --bordeado: 3px solid #fff;
+}
+
+html[data-theme = true] {
+  --primary-color: rgb(155, 158, 154);
+  --secondary-color: #393e46;
+  --bordeado: 3px solid #000;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +19,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: aliceblue;
-  align-content: center;
-  text-align: center;
+  margin: auto;
+  background-color: var(--primary-color);
 }
 
 code {
@@ -15,9 +28,86 @@ code {
     monospace;
 }
 
-.card {
+
+.general-container {
+  border-radius: 6px;
+  margin: auto;
+  overflow: hidden;
+  max-width: 700px;
+  min-width: 45%;
+  display: flex;
   align-content: center;
-  border: 2px solid grey;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu-container {
+  margin-bottom: 20px;
+  height: 50px;
+  width: 100%;
+}
+
+.menu-container input {
+  border-radius: 0px;
+  font-weight: normal;
+  width: 100%;
+  border: 0px;
+  margin: 0px;
+  height: 52px;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+
+.menu-container {
+  margin-bottom: 20px;
+
+}
+
+.menu-container input {
+  background-color: var(--secondary-color);
+  font-weight: normal;
+  width: 100%;
+  border: 0px;
+  margin: 0px;
+  margin-top: 5px;
+  height: 52px;
+  letter-spacing: 1px;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+.topmenu {
+  display: flex;
+  width: 100%;
+  height: 50px;
+}
+
+.topmenu-logo {
+  flex: 1 1 auto;
+}
+
+.logo-color {
+  fill: var(--secondary-color);
+}
+
+.menu-icons {
+  flex: 2 1 auto;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.theme {
+
+  background-image:url(Images/obscuroClaroTema.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 180px;
+  position: relative;
+}
+
+.card {
   border-radius: 6px;
   margin-bottom: 10px;
   margin-right: 10px;
@@ -27,14 +117,44 @@ code {
 .card p {
   padding: 5px;
   text-align: center;
+
 }
 
 .card img {
-  max-height: 200px;
+  height: 200px;
+  width: 200px;
+  border: var(--bordeado);
 }
 
 .card-grid { 
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
 }
+
+.card-grid p {
+  font-size: 50px;
+}
+
+.corazon_image {
+  background:url(./Images/corazon.png);
+  width:28px;
+  height:28px;
+  background-size: cover;
+  display: inline-block;
+}
+
+.whatsapp {
+  background:url(./Images/Whatsapp.png);
+  width:30px;
+  height:30px;
+  background-size: cover;  
+  display: inline-block;
+}
+
+
+
+
+
+@media (min-width: 668px) { .whatsapp { display: none } }

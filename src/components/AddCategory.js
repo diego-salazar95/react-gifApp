@@ -12,21 +12,24 @@ export const AddCategory = ({setCategories}) => {
         e.preventDefault();
        
         if(inputValue.trim().length > 2) {
-            setCategories( cats => [inputValue, ...cats] );
+            setCategories( [inputValue] );
             setInputValue('')
         }
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input 
-                type="text"
-                value={ inputValue }
-                onChange={ handleInputValue }
-            />
+        <div className='menu-container input-group mb-3'>
+            <form onSubmit={handleSubmit}>
+                <input 
+                    type="text" className='form-control' placeholder="Buscar" aria-label="Buscar"
+                    value={ inputValue }
+                    onChange={ handleInputValue }
+                />
         </form>
+        </div>
     )
 }
+
 
 // AIzaSyDSbnN7NVrp9LZ_cVVxVdXbXjGS7Id6W1U
 // https://tenor.googleapis.com/v2/search?key=&q=
